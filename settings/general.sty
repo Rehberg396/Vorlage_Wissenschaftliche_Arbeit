@@ -8,6 +8,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[absolute]{textpos}
 \usepackage{fancyhdr}
+\usepackage{chngcntr}
 
 \newcommand{\leftMargin}{3cm}
 \newcommand{\rightMargin}{2.5cm}
@@ -18,6 +19,8 @@
 
 \geometry{a4paper, left=\leftMargin, right=\rightMargin, top=\topMargin, bottom=\bottomMargin}
 \setstretch{1.2}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
 
 % Signature 
 % Use: \signature{Location}

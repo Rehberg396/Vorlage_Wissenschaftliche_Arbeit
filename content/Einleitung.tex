@@ -1,10 +1,41 @@
 \newpage
 
-\section{Einleitung}
-blabla
-\subsection{Test}
-dsfsdf
-\subsubsection{Test2}
-sdfsdf
-\paragraph{Test3}
-blad
+\section{Überschrift 1}
+Im Inhaltsverzeichnis
+\subsection{Überschrift 2}
+Im Inhaltsverzeichnis
+\subsubsection{Überschrift 3}
+Im Inhaltsverzeichnis
+\paragraph{Überschrift 4}
+Nicht im Inhaltsverzeichnis
+\subparagraph{Überschrift 5}
+Nicht im Inhaltsverzeichnis
+
+\subsection{Bilder}
+Sind automatisch im Abbildungsverzeichnis
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.1\textwidth]{images/Bosch-Logo.pdf}
+  \caption{Hier die Beschriftung}
+  \label{fig:Bosch}
+\end{figure}
+
+\subsection{Tabellen}
+Sind automatisch im Tabellenverzeichnis
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Farbe & Lehrinhalt & Klasse  \\
+    \hline
+    Grün & Definitionen & alert alert-block alert-success \\
+    \hline
+    Gelb & Beispiele & alert alert-block alert-warning \\
+    \hline
+    Blau & Aufgaben & alert alert-block alert-info  \\
+    \hline
+  \end{tabular}
+  \caption{Farbaufteilung nach Lehrinhalt}
+  \label{tab:Farbaufteilung}
+\end{table}

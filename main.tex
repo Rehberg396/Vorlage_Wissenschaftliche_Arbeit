@@ -3,30 +3,28 @@
 \usepackage{settings/general}
 \usepackage{settings/cover}
 
-\input{cover-Data}
+\input{base-Data}
 
 \begin{document}
 
-% Cover page and other constant content
-\input{constant/cover}
-\input{constant/indipendence}
-\input{constant/gender}
+% Cover page and other base content
+\input{base/cover}
+\input{base/indipendence}
+\input{base/gender}
 \input{content/abstract}
-\input{constant/toc}
+\input{base/toc}
 
 % Transition to Roman numerals and List of ...
 \clearpage
 \setupRomanPageStyle
 \setcounter{page}{1} % Start page numbering from 1
-\input{constant/list-of-figures}
-\input{constant/list-of-tables}
+\input{base/list-of-figures}
+\input{base/list-of-tables}
 
 % Transition to Arabic numerals and actual text
 \clearpage
 \setupArabicPageStyle
 \setcounter{page}{1} % Start page numbering from 1
-\input{content/Einleitung}
-\input{content/Test}
 \input{content/Einleitung}
 
 \end{document}
