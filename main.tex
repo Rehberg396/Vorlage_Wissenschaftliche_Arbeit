@@ -1,20 +1,32 @@
 \documentclass[12pt]{article}
 
-
-
-% Loading your own settings
 \usepackage{settings/general}
 \usepackage{settings/cover}
-% Loading the data for the title page
+
 \input{cover-Data}
 
 \begin{document}
 
+% Cover page and other constant content
 \input{constant/cover}
 \input{constant/indipendence}
 \input{constant/gender}
 \input{content/abstract}
 \input{constant/toc}
+
+% Transition to Roman numerals and List of ...
+\clearpage
+\setupRomanPageStyle
+\setcounter{page}{1} % Start page numbering from 1
+\input{constant/list-of-figures}
+\input{constant/list-of-tables}
+
+% Transition to Arabic numerals and actual text
+\clearpage
+\setupArabicPageStyle
+\setcounter{page}{1} % Start page numbering from 1
+\input{content/Einleitung}
+\input{content/Test}
 \input{content/Einleitung}
 
 \end{document}
