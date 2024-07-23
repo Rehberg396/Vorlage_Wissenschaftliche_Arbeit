@@ -1,0 +1,36 @@
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[german]{babel}
+\usepackage{datetime}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tocloft}
+\usepackage[absolute]{textpos}
+
+\newcommand{\leftMargin}{3cm}
+\newcommand{\rightMargin}{2.5cm}
+\newcommand{\topMargin}{2.5cm}
+\newcommand{\bottomMargin}{2cm}
+
+\graphicspath{ {images/} }
+
+\geometry{a4paper, left=\leftMargin, right=\rightMargin, top=\topMargin, bottom=\bottomMargin}
+\setstretch{1.2}
+
+% Signature 
+% Use: \signature{Location}
+\newcommand{\signature}[1]{
+    \newline
+    \vspace{1cm}
+    \newline
+    \noindent
+    \begin{tabular}{@{}ll@{}}
+        #1, den \today & \makebox[2.5in]{\hrulefill}\\
+        & \hspace{1pt} Unterschrift
+    \end{tabular}
+}
+
+% Anpassung des Inhaltsverzeichnisses mit tocstyle
+\renewcommand{\cftdotsep}{1}

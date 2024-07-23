@@ -1,0 +1,58 @@
+{\let\newpage\relax}
+
+\begin{textblock*}{\textwidth}(\leftMargin, \topMargin)
+\noindent\hrulefill
+\end{textblock*}   
+
+\begin{tikzpicture}[remember picture,overlay]
+   \node[anchor=north east,inner xsep=58.7pt, inner ysep=20pt] at (current page.north east)
+              {\includegraphics[width=5cm]{\universityLogoPath}};
+\end{tikzpicture}
+
+\ifcompany
+   \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=north west,inner xsep=3cm, inner ysep=30pt] at (current page.north west)
+                 {\includegraphics[width=5cm]{\companyLogoPath}};
+   \end{tikzpicture}
+\fi
+
+\begin{center}
+    \thispagestyle{empty}
+        \centering
+        \begin{textblock*}{\paperwidth}(0cm, 5cm)
+        \Large{\textbf{\titleText}}
+    \end{textblock*}     
+\end{center}
+
+\begin{center}
+\centering
+    \begin{textblock*}{\paperwidth}(0cm, 12.8cm)
+        \begin{Large}  
+        \textbf{\projectType}\\
+            \vspace{1cm}
+            im Studiengang\\
+            \degreeProgram\\
+            der Fakultät \faculty\\
+            \vspace{1cm}
+            vorgelegt von\\
+            \textbf{\authorName}\\
+            Matrikelnummer: \matriculationNumber\\
+            \vspace{1cm}
+            am \uploadDate\\
+            an der \university\\
+        \end{Large}
+    \end{textblock*}     
+\end{center}
+
+\begin{textblock*}{\textwidth}(\leftMargin, 24.8cm)
+\noindent\hrulefill
+\end{textblock*}   
+
+\begin{textblock*}{\textwidth}(\leftMargin, 25.8cm)
+\noindent
+    \begin{tabular}{@{}p{3.5cm}l@{}}
+        \Large Erstprüfer: & \Large \firstReviewer \\
+        \Large Zweitprüfer: & \Large \secondReviewer \\
+    \end{tabular}
+\end{textblock*}   
+
