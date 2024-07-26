@@ -1,0 +1,68 @@
+% Signature 
+% Use: \signature{Location}
+\newcommand{\signature}[1]{
+    \newline
+    \noindent
+    \begin{tabular}{@{}ll@{}}
+        #1, den \today & \makebox[6.5cm]{\hrulefill}\\
+        & Unterschrift
+    \end{tabular}
+}
+
+% Definition der Seitenstile
+\newcommand{\setupRomanPageStyle}{
+    \pagestyle{fancy}
+    \fancyhf{} % Clear all header and footer fields
+    \fancyhead{} % Disable all header fields
+    \fancyfoot[R]{\thepage} % Set right footer with the page number
+    \renewcommand{\headrulewidth}{0pt} % No header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+    \pagenumbering{Roman} % Set page numbering to Roman numerals
+}
+
+\newcommand{\setupArabicPageStyle}{
+    \pagestyle{fancy}
+    \fancyhf{} % Clear all header and footer fields
+    \fancyhead[L]{\leftmark} % Set left header with the chapter title
+    \fancyfoot[R]{\thepage} % Set right footer with the page number
+    \renewcommand{\headrulewidth}{1pt} % Header rule width
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+    \pagenumbering{arabic} % Set page numbering to Arabic numerals
+}
+
+% Define a new command for flexible tables
+\newcommand{\flexTable}[4]{
+    \begin{table}[H]
+    \centering
+        \begin{tabular}{#1}
+          \hline
+          #2 \\
+          \hline
+          #3
+          \hline
+        \end{tabular}
+    \caption{#4}
+    \label{tab:#4}
+    \end{table}
+}
+
+% Define a new command for including images with custom settings
+\newcommand{\flexFigure}[3]{
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#1\textwidth]{#2}
+    \caption{#3}
+    \label{fig:#3}
+  \end{figure}
+}
+
+% Define a new command for including images with custom settings
+\newcommand{\flexCode}[3]{
+    \lstinputlisting
+    [
+        language=#1, 
+        caption={#2}, 
+        label={code:#3}
+    ]
+    {#3}
+}

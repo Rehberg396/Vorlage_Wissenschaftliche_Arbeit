@@ -13,29 +13,34 @@ Nicht im Inhaltsverzeichnis
 
 \subsection{Bilder}
 Sind automatisch im Abbildungsverzeichnis
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.1\textwidth]{images/Bosch-Logo.pdf}
-  \caption{Hier die Beschriftung}
-  \label{fig:Bosch}
-\end{figure}
+Nutzung von Bilder wie \ref{fig:Hier die Beschriftung}
+\flexFigure
+{0.5}
+{images/Bosch-Logo.pdf}
+{Hier die Beschriftung}
+
 
 \subsection{Tabellen}
 Sind automatisch im Tabellenverzeichnis
+Nutzung von Tabellen wie \cref{tab:Farbaufteilung nach Lehrinhalt}
+\flexTable
+{|c|c|c|}
+{
+  \textbf{Farbe} & \textbf{Lehrinhalt} & \textbf{Klasse}
+}
+{
+  Grün & Definitionen & alert alert-block alert-success \\
+  Gelb & Beispiele & alert alert-block alert-warning \\
+  Blau & Aufgaben & alert alert-block alert-info \\
+}
+{Farbaufteilung nach Lehrinhalt}
 
-\begin{table}[h]
-  \centering
-  \begin{tabular}{|c|c|c|}
-    \hline
-    Farbe & Lehrinhalt & Klasse  \\
-    \hline
-    Grün & Definitionen & alert alert-block alert-success \\
-    \hline
-    Gelb & Beispiele & alert alert-block alert-warning \\
-    \hline
-    Blau & Aufgaben & alert alert-block alert-info  \\
-    \hline
-  \end{tabular}
-  \caption{Farbaufteilung nach Lehrinhalt}
-  \label{tab:Farbaufteilung}
-\end{table}
+\subsection{Abkürzungen}
+Erstes mal ausgeschrieben \ac{HTML} und danach abgekürzt \ac{HTML}.
+
+\subsection{Quellcode}
+Nutzung von Code wie \cref{code:code/example.py}
+\flexCode
+{Python}
+{Beschreibung}
+{code/example.py}

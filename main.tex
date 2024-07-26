@@ -2,8 +2,10 @@
 
 \usepackage{settings/general}
 \usepackage{settings/cover}
+\usepackage{settings/commands}
 
 \input{base-Data}
+\input{abbreviations}
 
 \begin{document}
 
@@ -17,14 +19,16 @@
 % Transition to Roman numerals and List of ...
 \clearpage
 \setupRomanPageStyle
-\setcounter{page}{1} % Start page numbering from 1
+\setcounter{page}{1}
 \input{base/list-of-figures}
 \input{base/list-of-tables}
+\input{base/list-of-code}
+\input{base/list-of-abbreviations}
 
 % Transition to Arabic numerals and actual text
 \clearpage
 \setupArabicPageStyle
-\setcounter{page}{1} % Start page numbering from 1
+\setcounter{page}{1}
 \input{content/Einleitung}
 
 \end{document}
