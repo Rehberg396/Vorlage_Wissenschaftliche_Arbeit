@@ -13,7 +13,7 @@ Nicht im Inhaltsverzeichnis
 
 \subsection{Bilder}
 Sind automatisch im Abbildungsverzeichnis
-Nutzung von Bilder wie \ref{fig:Hier die Beschriftung}
+Nutzung von Bilder wie \autoref{fig:Hier die Beschriftung}
 \flexFigure
 {0.5}
 {images/Bosch-Logo.pdf}
@@ -22,7 +22,7 @@ Nutzung von Bilder wie \ref{fig:Hier die Beschriftung}
 
 \subsection{Tabellen}
 Sind automatisch im Tabellenverzeichnis
-Nutzung von Tabellen wie \cref{tab:Farbaufteilung nach Lehrinhalt}
+Nutzung von Tabellen wie \autoref{tab:Farbaufteilung nach Lehrinhalt}
 \flexTable
 {|c|c|c|}
 {
@@ -39,8 +39,16 @@ Nutzung von Tabellen wie \cref{tab:Farbaufteilung nach Lehrinhalt}
 Erstes mal ausgeschrieben \ac{HTML} und danach abgekürzt \ac{HTML}.
 
 \subsection{Quellcode}
-Nutzung von Code wie \cref{code:code/example.py}
+Nutzung von Code wie \autoref{code:code/example.py}
 \flexCode
 {Python}
 {Beschreibung}
 {code/example.py}
+
+\subsection{Zitieren}
+% Direkte Zitate
+„Software-Entwicklung umfasst alle Aspekte des Entwurfs, der Implementierung und des Tests von Software-Systemen“. \cite[23]{winniewski_grundlagenwissen_2024}
+\\
+% Indirekte Zitate
+Die Software-Entwicklung beinhaltet verschiedene Phasen, von der Planung bis zur Wartung der Software \cite[45]{fuchs_disruption_2024}.
+\\\textbf{Punktsetzung beachten}
