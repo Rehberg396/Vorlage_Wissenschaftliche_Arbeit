@@ -1,4 +1,5 @@
 {\let\newpage\relax}
+\renewcommand{\arraystretch}{1.5}
 
 \begin{textblock*}{\textwidth}(\leftMargin, \topMargin)
 \noindent\hrulefill
@@ -26,7 +27,7 @@
 
 \begin{center}
 \centering
-    \begin{textblock*}{\paperwidth}(0cm, 12.8cm)
+    \begin{textblock*}{\paperwidth}(0cm, 11.8cm)
         \begin{Large}  
         \textbf{\projectType}\\
             \vspace{1cm}
@@ -44,15 +45,22 @@
     \end{textblock*}     
 \end{center}
 
-\begin{textblock*}{\textwidth}(\leftMargin, 24.8cm)
-\noindent\hrulefill
-\end{textblock*}   
-
-\begin{textblock*}{\textwidth}(\leftMargin, 25.8cm)
-\noindent
-    \begin{tabular}{@{}p{3.5cm}l@{}}
-        \Large Erstprüfer: & \Large \firstReviewer \\
-        \Large Zweitprüfer: & \Large \secondReviewer \\
-    \end{tabular}
-\end{textblock*}   
-
+\ifreviewer
+    \begin{textblock*}{\textwidth}(\leftMargin, 23.8cm)
+    \noindent\hrulefill
+    \end{textblock*}   
+    
+    
+    \renewcommand{\arraystretch}{1}
+    \begin{textblock*}{\textwidth}(\leftMargin, 24.8cm)
+    \noindent
+        \large
+        \begin{tabular}{@{}p{3.5cm}l@{}}
+            Erstprüfer: & \firstReviewer \\
+            Zweitprüfer: & \secondReviewer \\
+            \ifsupervisor
+                Betreuer: & \supervisor \\
+            \fi
+        \end{tabular}
+    \end{textblock*}
+\fi
