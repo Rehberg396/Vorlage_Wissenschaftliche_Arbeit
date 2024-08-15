@@ -1,68 +1,128 @@
-% Signature 
-% Use: \signature{Location}
+% --------------------------------
+% Unterschrift-Funktion
+% --------------------------------
+
+% Definiert einen neuen Befehl \signature zur Darstellung einer Unterschrift mit Ort und Datum.
+% 
+% Verwendung:
+% \signature{Ort}
+% 
+% Dieser Befehl erzeugt eine Zeile mit dem angegebenen Ort, dem aktuellen Datum und einer Linie für die Unterschrift.
 \newcommand{\signature}[1]{
-    \newline
-    \noindent
-    \begin{tabular}{@{}ll@{}}
-        #1, den \today & \makebox[6.5cm]{\hrulefill}\\
-        & Unterschrift
+    \newline % Fügt einen Zeilenumbruch ein
+    \noindent % Unterdrückt den Einzug der neuen Zeile
+    \begin{tabular}{@{}ll@{}} % Beginnt eine Tabelle ohne zusätzlichen horizontalen Abstand links oder rechts
+        #1, den \today & \makebox[6.5cm]{\hrulefill}\\ % Erste Zeile der Tabelle: Ort und Datum, daneben eine Linie für die Unterschrift
+        & Unterschrift % Zweite Zeile der Tabelle: Das Wort "Unterschrift" unterhalb der Linie
     \end{tabular}
 }
 
-% Definition der Seitenstile
+% --------------------------------
+% Definition der Seitenstile - Römische Seitenzahlen
+% --------------------------------
+
+% Definiert einen neuen Befehl \setupRomanPageStyle zur Konfiguration eines Seitenstils mit römischen Seitenzahlen.
+%
+% Verwendung:
+% \setupRomanPageStyle
+%
+% Dieser Befehl stellt sicher, dass der Seitenstil auf fancyhdr umgestellt wird und die Seitenzahlen
+% in römischen Ziffern angezeigt werden, ohne Kopfzeilen und mit der Seitenzahl unten rechts.
 \newcommand{\setupRomanPageStyle}{
-    \pagestyle{fancy}
-    \fancyhf{} % Clear all header and footer fields
-    \fancyhead{} % Disable all header fields
-    \fancyfoot[R]{\thepage} % Set right footer with the page number
-    \renewcommand{\headrulewidth}{0pt} % No header rule
-    \renewcommand{\footrulewidth}{0pt} % No footer rule
-    \pagenumbering{Roman} % Set page numbering to Roman numerals
+    \pagestyle{fancy} % Aktiviert das fancyhdr-Paket für Kopf- und Fußzeilen
+    \fancyhf{} % Löscht alle aktuellen Einstellungen für Kopf- und Fußzeilen
+    \fancyhead{} % Deaktiviert alle Kopfzeilenfelder
+    \fancyfoot[R]{\thepage} % Setzt die Seitenzahl unten rechts in die Fußzeile
+    \renewcommand{\headrulewidth}{0pt} % Entfernt die Trennlinie in der Kopfzeile
+    \renewcommand{\footrulewidth}{0pt} % Entfernt die Trennlinie in der Fußzeile
+    \pagenumbering{Roman} % Setzt die Seitennummerierung auf römische Ziffern
 }
 
+% --------------------------------
+% Definition der Seitenstile - Arabische Seitenzahlen
+% --------------------------------
+
+% Definiert einen neuen Befehl \setupArabicPageStyle zur Konfiguration eines Seitenstils mit arabischen Seitenzahlen.
+%
+% Verwendung:
+% \setupArabicPageStyle
+%
+% Dieser Befehl stellt sicher, dass der Seitenstil auf fancyhdr umgestellt wird und die Seitenzahlen
+% in arabischen Ziffern angezeigt werden, mit dem Kapitel-/Abschnittstitel oben links und der Seitenzahl unten rechts.
 \newcommand{\setupArabicPageStyle}{
-    \pagestyle{fancy}
-    \fancyhf{} % Clear all header and footer fields
-    \fancyhead[L]{\leftmark} % Set left header with the chapter title
-    \fancyfoot[R]{\thepage} % Set right footer with the page number
-    \renewcommand{\headrulewidth}{1pt} % Header rule width
-    \renewcommand{\footrulewidth}{0pt} % No footer rule
-    \pagenumbering{arabic} % Set page numbering to Arabic numerals
+    \pagestyle{fancy} % Aktiviert das fancyhdr-Paket für Kopf- und Fußzeilen
+    \fancyhf{} % Löscht alle aktuellen Einstellungen für Kopf- und Fußzeilen
+    \fancyhead[L]{\leftmark} % Setzt den Kapitel- oder Abschnittstitel oben links in die Kopfzeile
+    \fancyfoot[R]{\thepage} % Setzt die Seitenzahl unten rechts in die Fußzeile
+    \renewcommand{\headrulewidth}{1pt} % Legt die Dicke der Trennlinie in der Kopfzeile fest
+    \renewcommand{\footrulewidth}{0pt} % Entfernt die Trennlinie in der Fußzeile
+    \pagenumbering{arabic} % Setzt die Seitennummerierung auf arabische Ziffern
 }
 
-% Define a new command for flexible tables
+% --------------------------------
+% Flexible Tabelle
+% --------------------------------
+
+% Definiert einen neuen Befehl \flexTable zur Erstellung von flexiblen Tabellen mit benutzerdefinierten Einstellungen.
+%
+% Verwendung:
+% \flexTable{Tabellenformat}{Tabellenkopf}{Tabelleninhalt}{Bildunterschrift}
+%
+% Dieser Befehl erzeugt eine Tabelle mit einer benutzerdefinierten Struktur, einem Tabellenkopf,
+% dem Inhalt und einer Bildunterschrift. Die Tabelle wird innerhalb einer Gleitumgebung erstellt, 
+% sodass sie auf der aktuellen Seite angezeigt wird.
 \newcommand{\flexTable}[4]{
-    \begin{table}[H]
-    \centering
-        \begin{tabular}{#1}
-          \hline
-          #2 \\
-          \hline
-          #3
-          \hline
+    \begin{table}[H] % Beginnt eine Tabelle in einer Gleitumgebung mit fester Position auf der Seite
+    \centering % Zentriert die Tabelle auf der Seite
+        \begin{tabular}{#1} % Erstellt eine Tabelle mit dem angegebenen Format
+          \hline % Fügt eine horizontale Linie am Anfang der Tabelle ein
+          #2 \\ % Fügt den Tabellenkopf ein
+          \hline % Fügt eine horizontale Linie unterhalb des Tabellenkopfs ein
+          #3 % Fügt den Tabelleninhalt ein
+          \hline % Fügt eine horizontale Linie am Ende der Tabelle ein
         \end{tabular}
-    \caption{#4}
-    \label{tab:#4}
+    \caption{#4} % Fügt eine Bildunterschrift hinzu
+    \label{tab:#4} % Setzt ein Label für die Tabelle, das für Verweise verwendet werden kann
     \end{table}
 }
 
-% Define a new command for including images with custom settings
+% --------------------------------
+% Flexible Abbildung
+% --------------------------------
+
+% Definiert einen neuen Befehl \flexFigure zum Einfügen von Bildern mit benutzerdefinierten Einstellungen.
+%
+% Verwendung:
+% \flexFigure{Breite}{Dateiname}{Bildunterschrift}
+%
+% Dieser Befehl fügt ein Bild in das Dokument ein und ermöglicht es, die Breite relativ zur Textbreite
+% zu definieren. Eine Bildunterschrift und ein Label für Verweise werden ebenfalls hinzugefügt.
 \newcommand{\flexFigure}[3]{
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=#1\textwidth]{#2}
-    \caption{#3}
-    \label{fig:#3}
+  \begin{figure}[H] % Beginnt eine Abbildung in einer Gleitumgebung mit fester Position auf der Seite
+    \centering % Zentriert die Abbildung auf der Seite
+    \includegraphics[width=#1\textwidth]{#2} % Fügt das Bild ein und skaliert es auf die angegebene Breite
+    \caption{#3} % Fügt eine Bildunterschrift hinzu
+    \label{fig:#3} % Setzt ein Label für die Abbildung, das für Verweise verwendet werden kann
   \end{figure}
 }
 
-% Define a new command for including images with custom settings
+% --------------------------------
+% Flexible Quellcode-Einbettung
+% --------------------------------
+
+% Definiert einen neuen Befehl \flexCode zum Einfügen von Quellcode mit benutzerdefinierten Einstellungen.
+%
+% Verwendung:
+% \flexCode{Sprache}{Bildunterschrift}{Dateiname}
+%
+% Dieser Befehl ermöglicht das Einfügen von Quellcode-Dateien in das Dokument, wobei die Sprache
+% für das Syntax-Highlighting und eine Bildunterschrift angegeben werden. Ein Label für Verweise wird ebenfalls gesetzt.
 \newcommand{\flexCode}[3]{
     \lstinputlisting
     [
-        language=#1, 
-        caption={#2}, 
-        label={code:#3}
+        language=#1, % Legt die Programmiersprache für das Syntax-Highlighting fest
+        caption={#2}, % Fügt eine Bildunterschrift für den Quellcode hinzu
+        label={code:#3} % Setzt ein Label für den Quellcode, das für Verweise verwendet werden kann
     ]
-    {#3}
+    {#3} % Gibt den Dateinamen des Quellcodes an, der eingebunden werden soll
 }

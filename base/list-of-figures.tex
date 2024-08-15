@@ -1,3 +1,8 @@
-\newpage
+\clearpage
 \phantomsection\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\fancypagestyle{style}{
+  \fancyhead[L]{\MakeUppercase{Abbildungsverzeichnis}}
+  \renewcommand{\headrulewidth}{\headerthick}
+}
+\pagestyle{style}
 \listoffigures

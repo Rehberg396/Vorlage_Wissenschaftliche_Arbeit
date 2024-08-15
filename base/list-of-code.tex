@@ -1,3 +1,8 @@
-\newpage
+\clearpage
 \phantomsection\addcontentsline{toc}{section}{Quellcodeverzeichnis}
+\fancypagestyle{style}{
+  \fancyhead[L]{\MakeUppercase{Quellcodeverzeichnis}}
+  \renewcommand{\headrulewidth}{\headerthick}
+}
+\pagestyle{style}
 \lstlistoflistings

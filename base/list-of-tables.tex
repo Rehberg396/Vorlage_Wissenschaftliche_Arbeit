@@ -1,3 +1,8 @@
-\newpage
+\clearpage
 \phantomsection\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\fancypagestyle{tablestyle}{
+  \fancyhead[L]{\MakeUppercase{Tabellenverzeichnis}}
+  \renewcommand{\headrulewidth}{\headerthick}
+}
+\pagestyle{tablestyle}
 \listoftables

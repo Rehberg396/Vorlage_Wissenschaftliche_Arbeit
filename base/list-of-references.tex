@@ -1,3 +1,9 @@
-\newpage
-\phantomsection\addcontentsline{toc}{section}{Literatur}
-\printbibliography
+\defbibheading{bibliography}[\refname]{\section*{Literaturverzeichnis}}
+\clearpage
+\phantomsection\addcontentsline{toc}{section}{Literaturverzeichnis}
+\fancypagestyle{style}{
+  \fancyhead[L]{\MakeUppercase{Abbildungsverzeichnis}}
+  \renewcommand{\headrulewidth}{\headerthick}
+}
+\pagestyle{style}
+\printbibliography[heading=bibliography]

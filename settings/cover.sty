@@ -1,3 +1,18 @@
-\newif\ifcompany
-\newif\ifreviewer
-\newif\ifsupervisor
+% -------------------------
+% Definition von Bedingungsflags
+% -------------------------
+
+\newif\ifcompany    % Definiert ein neues Bedingungsflag namens 'ifcompany'.
+                    % Dieses Flag kann in einem LaTeX-Dokument verwendet werden, 
+                    % um bestimmte Abschnitte des Textes basierend darauf ein- oder auszublenden.
+                    % Standardmäßig ist das Flag 'false'.
+
+\newif\ifreviewer   % Definiert ein weiteres Bedingungsflag namens 'ifreviewer'.
+                    % Ähnlich wie bei 'ifcompany', kann dieses Flag verwendet werden,
+                    % um Text zu steuern, der nur angezeigt wird, wenn 'ifreviewer' wahr ist.
+                    % Standardmäßig ist dieses Flag ebenfalls 'false'.
+
+\newif\ifsupervisor % Definiert ein drittes Bedingungsflag namens 'ifsupervisor'.
+                    % Dieses Flag ermöglicht es, Teile des Dokuments nur dann anzuzeigen,
+                    % wenn 'ifsupervisor' auf 'true' gesetzt ist.
+                    % Auch hier ist das Flag standardmäßig 'false'.

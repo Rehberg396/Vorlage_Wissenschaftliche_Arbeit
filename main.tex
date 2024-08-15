@@ -1,41 +1,99 @@
 \documentclass[12pt]{article}
 
+% -------------------------------
+% Einbindung von Paketen
+% -------------------------------
+
+% Allgemeine Einstellungen und Definitionen für das gesamte Dokument
 \usepackage{settings/general}
+
+% Einstellungen und Definitionen für das Titelblatt
 \usepackage{settings/cover}
+
+% Benutzerdefinierte Befehle und Makros
 \usepackage{settings/commands}
 
+% -------------------------------
+% Literaturverzeichnis
+% -------------------------------
+
+% Fügt die Bibliographie-Quelle hinzu, die im Dokument verwendet wird
 \addbibresource{references.bib}
+
+% -------------------------------
+% Einbinden von Basisdaten und Abkürzungen
+% -------------------------------
+
+% Einbinden von Basisdaten wie Titel, Autor, etc., die in verschiedenen Teilen des Dokuments verwendet werden
 \input{base-data}
+
+% Einbinden der Abkürzungen, die im Dokument definiert und verwendet werden
 \input{abbreviations}
 
 \begin{document}
 
-% Cover page and other base content
-\input{base/cover}
-\input{base/indipendence}
-\input{base/gender}
-\input{base/blocking-note}
-\input{content/abstract}
-\input{base/toc}
+% -------------------------------
+% Titelblatt und andere Basiselemente
+% -------------------------------
 
-% Transition to Roman numerals and List of ...
-\clearpage
-\setupRomanPageStyle
-\setcounter{page}{1}
+% Fügt das Titelblatt ein, das im Dokument erscheint
+\input{base/cover}
+
+% Fügt einen Hinweis zum Sperrvermerk ein (z. B. Vertraulichkeitserklärung)
+\input{base/blocking-note}
+
+% Fügt die Eigenständigkeitserklärung ein (z. B. Erklärung, dass die Arbeit selbstständig erstellt wurde)
+\input{base/indipendence}
+
+% Fügt eine Erklärung zur geschlechterneutralen Sprache ein
+\input{base/gender}
+
+% Fügt die Zusammenfassung (Abstract) der Arbeit ein
+\input{content/abstract}
+
+% Fügt das Inhaltsverzeichnis ein
+\input{base/table-of-content}
+
+% -------------------------------
+% Übergang zu römischen Ziffern und Verzeichnissen
+% -------------------------------
+
+\clearpage % Fügt einen Seitenumbruch ein, um eine neue Seite zu beginnen
+\setupRomanPageStyle % Setzt den Seitenstil auf römische Ziffern um (z. B. für Verzeichnisse)
+\setcounter{page}{1} % Setzt die Seitennummerierung auf 1 zurück, beginnt die Nummerierung von vorne
+
+% Fügt das Abbildungsverzeichnis ein
 \input{base/list-of-figures}
+
+% Fügt das Tabellenverzeichnis ein
 \input{base/list-of-tables}
+
+% Fügt das Quellcodeverzeichnis ein
 \input{base/list-of-code}
+
+% Fügt das Abkürzungsverzeichnis ein
 \input{base/list-of-abbreviations}
 
-% Transition to Arabic numerals and actual text
-\clearpage
-\setupArabicPageStyle
-\setcounter{page}{1}
+% -------------------------------
+% Übergang zu arabischen Ziffern und Haupttext
+% -------------------------------
+
+\clearpage % Fügt einen Seitenumbruch ein, um eine neue Seite zu beginnen
+\setupArabicPageStyle % Wechselt zu arabischen Seitenzahlen für den Hauptteil des Dokuments
+\setcounter{page}{1} % Setzt die Seitennummerierung auf 1 zurück
+
+% Fügt den Hauptinhalt der Arbeit ein, in diesem Fall ein Kapitel oder Beispieltext
 \input{examples}
 
-\clearpage
-\setupRomanPageStyle
-\setcounter{page}{5}
+% -------------------------------
+% Übergang zu römischen Ziffern für das Literaturverzeichnis
+% -------------------------------
+
+\clearpage % Fügt einen Seitenumbruch ein, um eine neue Seite zu beginnen
+\setupRomanPageStyle % Wechselt zurück zu römischen Seitenzahlen für das Literaturverzeichnis
+\setcounter{page}{5} % Setzt die Seitennummerierung auf 5, um den römischen Stil fortzusetzen
+
+% Fügt das Literaturverzeichnis ein
 \input{base/list-of-references}
 
 \end{document}
