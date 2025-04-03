@@ -5,13 +5,16 @@
 % -------------------------------
 
 % Allgemeine Einstellungen und Definitionen für das gesamte Dokument
-\usepackage{settings/general}
+%\usepackage{general}
+\input{settings/general}
 
 % Einstellungen und Definitionen für das Titelblatt
-\usepackage{settings/cover}
+\input{settings/cover}
 
 % Benutzerdefinierte Befehle und Makros
-\usepackage{settings/commands}
+\input{settings/commands}
+
+
 
 % -------------------------------
 % Literaturverzeichnis
@@ -27,7 +30,7 @@
 % Einbinden von Basisdaten wie Titel, Autor, etc., die in verschiedenen Teilen des Dokuments verwendet werden
 \input{base-data}
 
-% Einbinden der Abkürzungen, die im Dokument definiert und verwendet werden
+% % Einbinden der Abkürzungen, die im Dokument definiert und verwendet werden
 \input{abbreviations}
 
 \begin{document}
@@ -77,7 +80,6 @@
 % -------------------------------
 % Übergang zu arabischen Ziffern und Haupttext
 % -------------------------------
-
 \clearpage % Fügt einen Seitenumbruch ein, um eine neue Seite zu beginnen
 \setupArabicPageStyle % Wechselt zu arabischen Seitenzahlen für den Hauptteil des Dokuments
 \setcounter{page}{1} % Setzt die Seitennummerierung auf 1 zurück
@@ -91,9 +93,11 @@
 
 \clearpage % Fügt einen Seitenumbruch ein, um eine neue Seite zu beginnen
 \setupRomanPageStyle % Wechselt zurück zu römischen Seitenzahlen für das Literaturverzeichnis
-\setcounter{page}{5} % Setzt die Seitennummerierung auf 5, um den römischen Stil fortzusetzen
+\setcounter{page}{6} % Setzt die Seitennummerierung auf 5, um den römischen Stil fortzusetzen
 
 % Fügt das Literaturverzeichnis ein
 \input{base/list-of-references}
+
+% \appendix
 
 \end{document}

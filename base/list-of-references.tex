@@ -1,9 +1,10 @@
 \defbibheading{bibliography}[\refname]{\section*{Literaturverzeichnis}}
 \clearpage
+\sectionbreak
 \phantomsection\addcontentsline{toc}{section}{Literaturverzeichnis}
-\fancypagestyle{style}{
-  \fancyhead[L]{\MakeUppercase{Abbildungsverzeichnis}}
-  \renewcommand{\headrulewidth}{\headerthick}
+\fancypagestyle{bibstyle}{
+  \fancyhead[L]{\MakeUppercase{Literaturverzeichnis}}
+  \renewcommand{\headrulewidth}{1pt}
 }
-\pagestyle{style}
-\printbibliography[heading=bibliography]
+\pagestyle{bibstyle}
+\printbibliography

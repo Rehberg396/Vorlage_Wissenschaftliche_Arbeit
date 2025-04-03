@@ -1,8 +1,10 @@
 \clearpage
+\sectionbreak
+
 \phantomsection\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-\fancypagestyle{style}{
+\fancypagestyle{abbreviationstyle}{
   \fancyhead[L]{\MakeUppercase{Abkürzungsverzeichnis}}
-  \renewcommand{\headrulewidth}{\headerthick}
+  \renewcommand{\headrulewidth}{1pt}
 }
-\pagestyle{style}
-\printacronyms[name=Abkürzungsverzeichnis, template=supertabular]
+\pagestyle{abbreviationstyle}
+\printacronyms[name=Abkürzungsverzeichnis]

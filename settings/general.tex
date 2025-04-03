@@ -4,6 +4,10 @@
 
 \usepackage{times}          % Verwende die Times-Schriftart für das gesamte Dokument
 \usepackage{setspace}       % Erlaubt die Anpassung des Zeilenabstands im Dokument
+\usepackage[utf8]{inputenc} % UTF-8 Zeichencodierung
+\usepackage[T1]{fontenc}    % Korrekte Schriftkodierung für Umlaute
+\usepackage[sorting=none, backend=biber]{biblatex}  % Backend auf biber setzen
+\usepackage{pdfpages}
 
 % -------------------------
 % Grafische und Layout-Pakete
@@ -13,9 +17,13 @@
 \usepackage{graphicx}       % Zum Einfügen und Skalieren von Bildern im Dokument
 \usepackage{geometry}       % Anpassung der Seitenränder und Layout des Dokuments
 \usepackage[german]{babel}  % Deutsche Sprachunterstützung für Trennungen, Datum etc.
+\sloppy
 \usepackage{datetime}       % Erlaubt die Formatierung von Datumsangaben im Dokument
+\usepackage[hyperref=true]{acro} % Akronyme mit Links zu ihrer Definition
 \usepackage[hidelinks]{hyperref} % Erzeugt klickbare Links im Dokument, ohne farbige Umrahmungen
 \usepackage[absolute]{textpos} % Ermöglicht das absolut positionierte Platzieren von Text auf der Seite
+\usepackage{xurl}           % Bessere URL-Trennung
+\usepackage{dirtree}        % Verzeichnisstruktur
 
 % -------------------------
 % Kopf- und Fußzeilenverwaltung
@@ -23,12 +31,6 @@
 
 \usepackage{fancyhdr}       % Ermöglicht die Anpassung von Kopf- und Fußzeilen
 \setlength{\headheight}{15pt} % Stellt sicher, dass genug Platz für die Kopfzeile vorhanden ist
-
-% -------------------------
-% Nummerierungsanpassungen
-% -------------------------
-
-\usepackage{chngcntr}       % Ermöglicht das Anpassen der Nummerierung von Tabellen, Abbildungen etc.
 
 % -------------------------
 % Tabellen und Listen
@@ -39,6 +41,8 @@
 \usepackage{float}          % Präzisere Kontrolle der Platzierung von Gleitobjekten (Tabellen, Abbildungen)
 \usepackage{acro}           % Verwaltung und Definition von Akronymen im Dokument
 \usepackage{supertabular}   % Erstellung von sehr langen Tabellen, die über mehrere Seiten gehen
+\usepackage{tabularx}       % Für automatische Anpassung der Spaltenbreite
+\usepackage{makecell}
 
 % -------------------------
 % Quellcode-Darstellung
@@ -53,13 +57,19 @@
 
 \usepackage{cleveref}       % Automatisierte Verweise mit intelligenten Namen, z.B. "Abschnitt" statt "Section"
 \usepackage{csquotes}       % Bessere Handhabung und Formatierung von Zitaten
-\usepackage[style=iso-numeric]{biblatex} % Zitate und Literaturverzeichnis im ISO-Format
+%\usepackage[style=iso-numeric]{biblatex} % Zitate und Literaturverzeichnis im ISO-Format
 
 % -------------------------
 % Sektionstitel anpassen
 % -------------------------
 
-\usepackage{titlesec}       % Erlaubt eine detaillierte Anpassung der Kapitel- und Abschnittstitel
+%\usepackage{titlesec}       % Erlaubt eine detaillierte Anpassung der Kapitel- und Abschnittstitel
+
+% -------------------------
+% Nummerierungsanpassungen
+% -------------------------
+
+\usepackage{chngcntr}       % Ermöglicht das Anpassen der Nummerierung von Tabellen, Abbildungen etc.
 
 % -------------------------
 % Definition der Seitenränder
@@ -117,13 +127,13 @@
 % Anpassung des Abschnittstitels
 % -------------------------
 
-\titleformat{\section}[block]
-  {\normalfont\Large\bfseries}{\thesection}{1em}{}
-% Setzt das Format für Abschnittstitel: normale Schrift, große, fettgedruckte Titel, nummeriert
-
-% Abstand vor und nach dem Abschnittstitel
-\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
-% Definiert den Abstand vor und nach dem Abschnittstitel
+%\titleformat{\section}[block]
+%  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+%% Setzt das Format für Abschnittstitel: normale Schrift, große, fettgedruckte Titel, nummeriert
+%
+%% Abstand vor und nach dem Abschnittstitel
+%\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+%% Definiert den Abstand vor und nach dem Abschnittstitel
 
 % -------------------------
 % Spezifischer Seitenumbruch
@@ -165,7 +175,7 @@
 % Setup für Akronyme
 % -------------------------
 
-\acsetup{make-links} % Verlinkt die Definitionen von Akronymen automatisch im Text
+%\acsetup{make-links} % Verlinkt die Definitionen von Akronymen automatisch im Text
 
 % -------------------------
 % Anpassung der Farben für den Quellcode

@@ -3,34 +3,40 @@
 % -------------------------------
 
 % \newcommand definiert einen neuen Befehl \titleText, der den Titel des Projekts enthält
-\newcommand{\titleText}{Titel} 
+\newcommand{\titleText}{Titel der Arbeit} 
 
 % \newcommand definiert einen neuen Befehl \projectType, der den Typ des Projekts (z.B. Bachelorarbeit, Masterarbeit) enthält
-\newcommand{\projectType}{Bachelorarbeit}
+\newcommand{\projectType}{Forschungsprojekt}
 
 % \newcommand definiert einen neuen Befehl \degreeProgram, der den Studiengang enthält, in dem die Arbeit geschrieben wird
-\newcommand{\degreeProgram}{Softwaretechnik und Medieninformatik}
+\newcommand{\degreeProgram}{Angewandte Informatik}
 
 % \newcommand definiert einen neuen Befehl \faculty, der die Fakultät oder den Fachbereich der Hochschule angibt
 \newcommand{\faculty}{Informatik und Informationstechnik}
 
 % \newcommand definiert einen neuen Befehl \authorName, der den Namen des Autors oder der Autorin der Arbeit enthält
-\newcommand{\authorName}{Robert Rehberg}
+\newcommand{\authorName}{Alexander Dietrich}
 
 % \newcommand definiert einen neuen Befehl \matriculationNumber, der die Matrikelnummer des Autors oder der Autorin enthält
-\newcommand{\matriculationNumber}{768196}
+\newcommand{\matriculationNumber}{767334}
+
+% \newcommand definiert einen neuen Befehl \secondAuthorName, der den Namen des zweiten Autors oder der Autorin enthält
+\newcommand{\secondAuthorName}{Robert Rehberg}
+
+% \newcommand definiert einen neuen Befehl \secondMatriculationNumber, der die Matrikelnummer des zweiten Autors oder der Autorin enthält
+\newcommand{\secondMatriculationNumber}{768196}
 
 % \newcommand definiert einen neuen Befehl \university, der den Namen der Hochschule oder Universität enthält
 \newcommand{\university}{Hochschule Esslingen}
 
 % \newcommand definiert einen neuen Befehl \firstReviewer, der den Namen des ersten Prüfers oder Betreuers enthält
-\newcommand{\firstReviewer}{Prof. Dr. }
+\newcommand{\firstReviewer}{Prof. Dr. Rer. Nat. Mirko Sonntag}
 
 % \newcommand definiert einen neuen Befehl \secondReviewer, der den Namen des zweiten Prüfers oder Betreuers enthält
-\newcommand{\secondReviewer}{Prof. Dr. }
+\newcommand{\secondReviewer}{}
 
 % \newcommand definiert einen neuen Befehl \supervisor, der den Namen des betreuenden Professors oder der betreuenden Professorin enthält
-\newcommand{\supervisor}{Prof. Dr. }
+\newcommand{\supervisor}{Dipl. -Phys. Emanuel Reichsöllner}
 
 % \newcommand definiert einen neuen Befehl \universityLogoPath, der den Pfad zum Logo der Hochschule enthält
 \newcommand{\universityLogoPath}{HS-Logo.png}
@@ -42,7 +48,10 @@
 \newcommand{\uploadDate}{\today}
 
 % \newcommand definiert einen neuen Befehl \residence, der den Wohnort des Autors oder der Autorin enthält
-\newcommand{\residence}{Ludwigsburg}
+\newcommand{\residence}{Esslingen}
+
+% \newcommand definiert einen neuen Befehl \firstResidence, der den Wohnort des zweiten Autors oder der Autorin enthält
+\newcommand{\secondresidence}{Ludwigsburg}
 
 % -------------------------------
 % Bedingte Anweisungen zur Anzeige bestimmter Inhalte
@@ -50,7 +59,7 @@
 
 % \companytrue setzt den Schalter für die Verwendung eines Unternehmenslogos auf "wahr" (true),
 % wodurch Inhalte, die das Unternehmenslogo betreffen, im Dokument angezeigt werden
-\companytrue
+% \companytrue
 
 % \reviewertrue setzt den Schalter für die Anzeige der Gutachter auf "wahr" (true),
 % wodurch die Namen der Gutachter im Dokument angezeigt werden
@@ -59,3 +68,11 @@
 % \supervisortrue setzt den Schalter für die Anzeige des Betreuers auf "wahr" (true),
 % wodurch der Name des betreuenden Professors oder der betreuenden Professorin im Dokument angezeigt wird
 \supervisortrue
+
+% \secondauthortrue setzt den Schalter für die Verwendung eines zweiten Autors auf "wahr" (true),
+% wodurch Inhalte, die den zweiten Autor betreffen, im Dokument angezeigt werden
+\secondauthortrue
+
+% \secondauthorfalse setzt den Schalter für die Verwendung eines zweiten Autors auf "falsch" (false),
+% wodurch Inhalte, die den zweiten Autor betreffen, im Dokument nicht angezeigt werden
+% \secondreviewertrue

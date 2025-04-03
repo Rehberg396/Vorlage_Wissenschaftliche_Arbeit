@@ -57,6 +57,7 @@
     \renewcommand{\headrulewidth}{1pt} % Legt die Dicke der Trennlinie in der Kopfzeile fest
     \renewcommand{\footrulewidth}{0pt} % Entfernt die Trennlinie in der Fußzeile
     \pagenumbering{arabic} % Setzt die Seitennummerierung auf arabische Ziffern
+    % Setzt das Format für Abschnittstitel
 }
 
 % --------------------------------
@@ -74,13 +75,13 @@
 \newcommand{\flexTable}[4]{
     \begin{table}[H] % Beginnt eine Tabelle in einer Gleitumgebung mit fester Position auf der Seite
     \centering % Zentriert die Tabelle auf der Seite
-        \begin{tabular}{#1} % Erstellt eine Tabelle mit dem angegebenen Format
+        \begin{tabularx}{\textwidth}{#1} % Erstellt eine Tabelle mit dem angegebenen Format
           \hline % Fügt eine horizontale Linie am Anfang der Tabelle ein
           #2 \\ % Fügt den Tabellenkopf ein
           \hline % Fügt eine horizontale Linie unterhalb des Tabellenkopfs ein
           #3 % Fügt den Tabelleninhalt ein
           \hline % Fügt eine horizontale Linie am Ende der Tabelle ein
-        \end{tabular}
+        \end{tabularx}
     \caption{#4} % Fügt eine Bildunterschrift hinzu
     \label{tab:#4} % Setzt ein Label für die Tabelle, das für Verweise verwendet werden kann
     \end{table}

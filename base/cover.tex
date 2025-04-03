@@ -26,41 +26,58 @@
 \end{center}
 
 \begin{center}
-\centering
-    \begin{textblock*}{\paperwidth}(0cm, 11.8cm)
-        \begin{Large}  
-        \textbf{\projectType}\\
-            \vspace{1cm}
-            im Studiengang\\
-            \degreeProgram\\
-            der Fakultät \faculty\\
-            \vspace{1cm}
-            vorgelegt von\\
-            \textbf{\authorName}\\
-            Matrikelnummer: \matriculationNumber\\
-            \vspace{1cm}
-            am \uploadDate\\
-            an der \university\\
-        \end{Large}
-    \end{textblock*}     
-\end{center}
+    \centering
+        \begin{textblock*}{\paperwidth}(0cm, 9.8cm)
+            \begin{Large}  
+            \textbf{\projectType}\\
+                \vspace{1cm}
+                im Studiengang\\
+                \degreeProgram\\
+                der Fakultät \faculty\\
+                \vspace{1cm}
+                vorgelegt von\\
+                \textbf{\authorName}\\
+                Matrikelnummer: \matriculationNumber\\
+                \ifsecondauthor
+                    \textbf{\secondAuthorName}\\
+                    Matrikelnummer: \secondMatriculationNumber\\
+                \fi
+                \vspace{1cm}
+                % am \uploadDate\\
+                % an der \university\\
+            \end{Large}
+        \end{textblock*}     
+    \end{center}
 
-\ifreviewer
-    \begin{textblock*}{\textwidth}(\leftMargin, 23.8cm)
-    \noindent\hrulefill
-    \end{textblock*}   
-    
-    
-    \renewcommand{\arraystretch}{1}
-    \begin{textblock*}{\textwidth}(\leftMargin, 24.8cm)
-    \noindent
-        \large
-        \begin{tabular}{@{}p{3.5cm}l@{}}
-            Erstprüfer: & \firstReviewer \\
-            Zweitprüfer: & \secondReviewer \\
-            \ifsupervisor
-                Betreuer: & \supervisor \\
-            \fi
-        \end{tabular}
-    \end{textblock*}
-\fi
+    \begin{center}
+        \centering
+            \begin{textblock*}{\paperwidth}(0cm, 21.5cm)
+                \begin{Large}  
+                    am \uploadDate\\
+                    an der \university\\
+                \end{Large}
+            \end{textblock*}     
+        \end{center}
+
+        \ifreviewer
+        \begin{textblock*}{\textwidth}(\leftMargin, 23.8cm)
+        \noindent\hrulefill
+        \end{textblock*}   
+        
+        \renewcommand{\arraystretch}{1}
+        \begin{textblock*}{\textwidth}(\leftMargin, 24.8cm)
+        \noindent
+            \large
+            \begin{tabular}{@{}p{3.5cm}l@{}}
+                \ifsecondreviewer
+                    Erstprüfer: & \firstReviewer \\
+                    Zweitprüfer: & \secondReviewer \\
+                \else
+                    Prüfer: & \firstReviewer \\
+                \fi
+                \ifsupervisor
+                    Betreuer: & \supervisor \\
+                \fi
+            \end{tabular}
+        \end{textblock*}
+    \fi

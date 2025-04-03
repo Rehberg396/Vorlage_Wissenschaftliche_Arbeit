@@ -12,7 +12,15 @@
                     % um Text zu steuern, der nur angezeigt wird, wenn 'ifreviewer' wahr ist.
                     % Standardmäßig ist dieses Flag ebenfalls 'false'.
 
-\newif\ifsupervisor % Definiert ein drittes Bedingungsflag namens 'ifsupervisor'.
+\newif\ifsecondreviewer % Definiert ein drittes Bedingungsflag namens 'ifsecondreviewer'.
+                    % Dieses Flag wird verwendet, um zu bestimmen, ob es einen zweiten Gutachter gibt.
+                    % Standardmäßig ist das Flag 'false', was bedeutet, dass es keinen zweiten Gutachter gibt.
+
+\newif\ifsupervisor % Definiert ein viertes Bedingungsflag namens 'ifsupervisor'.
                     % Dieses Flag ermöglicht es, Teile des Dokuments nur dann anzuzeigen,
                     % wenn 'ifsupervisor' auf 'true' gesetzt ist.
                     % Auch hier ist das Flag standardmäßig 'false'.
+
+\newif\ifsecondauthor   % Erstellt ein Flag namens 'secondauthor'
+                        % Das Flag wird verwendet, um zu bestimmen, ob es einen zweiten Autor gibt.
+                        % Standardmäßig ist das Flag 'false', was bedeutet, dass es keinen zweiten Autor gibt.
