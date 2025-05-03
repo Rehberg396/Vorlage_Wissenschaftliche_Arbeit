@@ -8,14 +8,16 @@
 % \signature{Ort}
 % 
 % Dieser Befehl erzeugt eine Zeile mit dem angegebenen Ort, dem aktuellen Datum und einer Linie für die Unterschrift.
-\newcommand{\signature}[1]{
-    \newline % Fügt einen Zeilenumbruch ein
-    \noindent % Unterdrückt den Einzug der neuen Zeile
-    \begin{tabular}{@{}ll@{}} % Beginnt eine Tabelle ohne zusätzlichen horizontalen Abstand links oder rechts
-        #1, den \today & \makebox[6.5cm]{\hrulefill}\\ % Erste Zeile der Tabelle: Ort und Datum, daneben eine Linie für die Unterschrift
-        & Unterschrift % Zweite Zeile der Tabelle: Das Wort "Unterschrift" unterhalb der Linie
-    \end{tabular}
+\newcommand{\signature}[2]{%
+  \par\noindent
+  \begin{tabular}{@{}l l@{}}
+    % erste Spalte: feste Breite 6cm, Inhalt linksbündig
+    \makebox[6cm][l]{#1, den \today} & \makebox[6.5cm]{\hrulefill}\\
+    % zweite Zeile: keine erste Spalte, dann Unterschrift + Name
+    & Unterschrift \textit{#2}
+  \end{tabular}\par
 }
+
 
 % --------------------------------
 % Definition der Seitenstile - Römische Seitenzahlen
