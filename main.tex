@@ -80,6 +80,7 @@
 % Übergang zu arabischen Ziffern und Haupttext
 % -------------------------------
 \clearpage % Fügt einen Seitenumbruch ein, um eine neue Seite zu beginnen
+\setcounter{savepage}{\value{page}} % Römische Seitenzahl merken, um sie später fortzusetzen
 \setupArabicPageStyle % Wechselt zu arabischen Seitenzahlen für den Hauptteil des Dokuments
 \setcounter{page}{1} % Setzt die Seitennummerierung auf 1 zurück
 
@@ -91,7 +92,7 @@
 
 \clearpage % Fügt einen Seitenumbruch ein, um eine neue Seite zu beginnen
 \setupRomanPageStyle % Wechselt zurück zu römischen Seitenzahlen für das Literaturverzeichnis
-\setcounter{page}{6} % Setzt die Seitennummerierung auf 5, um den römischen Stil fortzusetzen
+\setcounter{page}{\value{savepage}} % Römische Nummerierung automatisch dort fortsetzen, wo sie aufgehört hat
 
 % Fügt das Literaturverzeichnis ein
 \input{base/list-of-references}
