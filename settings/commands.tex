@@ -135,3 +135,32 @@
     ]
     {#3} % Gibt den Dateinamen des Quellcodes an, der eingebunden werden soll
 }
+
+% --------------------------------
+% TODO-Notation + TODO-Liste
+% --------------------------------
+
+\makeatletter
+\newcommand{\todo@entries}{}
+\newcounter{todocount}
+
+\newcommand{\todo@store}[2]{%
+  \stepcounter{todocount}%
+  \g@addto@macro\todo@entries{\item[\textbf{S.~#1}] \textcolor{red}{#2}}%
+}
+
+\newcommand{\todo}[1]{%
+  \textcolor{red}{#1}%
+  \protected@write\@auxout{}{\string\todo@store{\thepage}{#1}}%
+}
+
+\newcommand{\printtodos}{%
+  \ifnum\value{todocount}=0
+    Keine Todos vorhanden.
+  \else
+    \begin{description}
+      \todo@entries
+    \end{description}
+  \fi
+}
+\makeatother
