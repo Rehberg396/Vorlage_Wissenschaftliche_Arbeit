@@ -17,3 +17,5 @@ code/Example.py
 !pdf/*
 !code/*
 !.gitignore
+test/
+content/content.tex
