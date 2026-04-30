@@ -1,19 +1,66 @@
 {
   "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.recipe.default": "first",
   "latex-workshop.latex.tools": [
     {
-      "name": "make-all",
-      "command": "make",
+      "name": "latexmk-main",
+      "command": "latexmk",
       "args": [
-        "all"
+        "-r",
+        "config/latexmkrc",
+        "-pdf",
+        "main.tex"
+      ]
+    },
+    {
+      "name": "latexmk-stress",
+      "command": "latexmk",
+      "args": [
+        "-r",
+        "config/latexmkrc",
+        "-pdf",
+        "main-stresstest.tex"
+      ]
+    },
+    {
+      "name": "latexmk-clear-main",
+      "command": "latexmk",
+      "args": [
+        "-r",
+        "config/latexmkrc",
+        "-C",
+        "main.tex"
+      ]
+    },
+    {
+      "name": "latexmk-clear-stress",
+      "command": "latexmk",
+      "args": [
+        "-r",
+        "config/latexmkrc",
+        "-C",
+        "main-stresstest.tex"
       ]
     }
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "make all",
+      "name": "latex",
       "tools": [
-        "make-all"
+        "latexmk-main"
+      ]
+    },
+    {
+      "name": "latex stress",
+      "tools": [
+        "latexmk-stress"
+      ]
+    },
+    {
+      "name": "latex clear",
+      "tools": [
+        "latexmk-clear-main",
+        "latexmk-clear-stress"
       ]
     }
   ]

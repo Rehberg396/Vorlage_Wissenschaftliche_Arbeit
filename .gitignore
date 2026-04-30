@@ -12,7 +12,6 @@ code/Example.py
 !examples.tex
 !main.tex
 !references.bib
-!Makefile
 !config/latexmkrc
 !config/xurl.sty
 !.vscode/settings.json

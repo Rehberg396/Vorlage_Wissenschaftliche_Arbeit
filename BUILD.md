@@ -1,14 +1,12 @@
 # Build-Befehle
 
 ```bash
-# PDF bauen (empfohlen)
-make
+# Universell (Windows/macOS/Linux): normales PDF
+latexmk -r config/latexmkrc -pdf main.tex
 
-# Separater Verzeichnis-Stresstest (mit viel Inhalt + Referenzen)
-make stress
-
-# Build-Dateien + PDF aufräumen
-make clean
+# Universell (Windows/macOS/Linux): Stresstest-PDF
+latexmk -r config/latexmkrc -pdf main-stresstest.tex
 ```
 
-In VS Code (LaTeX Workshop) ist ein Recipe **"make all"** hinterlegt.
+In VS Code (LaTeX Workshop) sind die Recipes **"latex"** und **"latex stress"** hinterlegt.
+In VS Code (LaTeX Workshop) gibt es zusätzlich **"latex clear"**.
