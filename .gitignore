@@ -12,10 +12,14 @@ code/Example.py
 !examples.tex
 !main.tex
 !references.bib
-!xurl.sty
+!Makefile
+!config/latexmkrc
+!config/xurl.sty
+!.vscode/settings.json
+!BUILD.md
 !appendix/*.tex
 !pdf/*
 !code/*
 !.gitignore
-test/
-content/content.tex
+test/*
+build/

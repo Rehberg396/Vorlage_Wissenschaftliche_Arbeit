@@ -1,0 +1,20 @@
+{
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "make-all",
+      "command": "make",
+      "args": [
+        "all"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "make all",
+      "tools": [
+        "make-all"
+      ]
+    }
+  ]
+}
